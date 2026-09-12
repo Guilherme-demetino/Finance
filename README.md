@@ -49,3 +49,23 @@ Certifique-se de ter o **Node.js** e o **Git** instalados em sua máquina.
 ### 1. Clonar o Repositório
 ```bash
 git clone https://github.com/Guilherme-demetino/Finance.git
+
+### 2. Configurar e Executar o Backend
+Abra o terminal, acesse a pasta do servidor e instale as dependências:
+```bash
+cd Finance/backend
+npm install 
+
+### 3. Inicialize o banco de dados executando as migrações do Prisma:
+npx prisma migrate dev
+
+### 4. Configurar e Iniciar o Frontend
+Abra um **novo terminal** (mantenha o terminal do backend rodando), acesse a pasta do frontend e instale as dependências:
+```bash
+cd frontend
+# ou 'cd ../frontend' caso ainda esteja dentro da pasta backend
+npm install
+
+### 5. Acesso à Aplicação
+Com o banco de dados configurado, o backend rodando em um terminal e o frontend rodando em outro, abra o seu navegador e acesse a URL local fornecida pelo Vite:
+* 👉 **Acessar o Dashboard:** `http://localhost:5173`
