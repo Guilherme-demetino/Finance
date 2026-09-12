@@ -55,6 +55,9 @@ Abra o terminal, acesse a pasta do servidor e instale as dependências:
 ```bash
 cd Finance/backend
 npm install 
+inicie o servidor backend 
+cd Finance/backend 
+npm run dev
 
 ### 3. Inicialize o banco de dados executando as migrações do Prisma:
 npx prisma migrate dev
@@ -65,6 +68,10 @@ Abra um **novo terminal** (mantenha o terminal do backend rodando), acesse a pas
 cd frontend
 # ou 'cd ../frontend' caso ainda esteja dentro da pasta backend
 npm install
+inicie o servidor frontend 
+cd Finance/frontend 
+npm run dev
+
 
 ### 5. Acesso à Aplicação
 Com o banco de dados configurado, o backend rodando em um terminal e o frontend rodando em outro, abra o seu navegador e acesse a URL local fornecida pelo Vite:
