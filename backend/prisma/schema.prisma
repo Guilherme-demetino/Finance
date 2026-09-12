@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id                  String      @id @default(uuid())
+  nome                String
+  email               String      @unique
+  senhaHash           String?
+  atualizadoEm        DateTime    @updatedAt
+  resetToken          String?
+  resetTokenExpiracao DateTime?
+  transacoes          Transacao[]
+  carteiras           Carteira[]
+  categorias          Categoria[]
+}
+
+model Carteira {
+  id        String      @id @default(uuid())
+  nome      String
+  usuarioId String
+  criadoEm  DateTime    @default(now())
+  usuario   Usuario     @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  transacoes Transacao[]
+}
+
+model Categoria {
+  id         String      @id @default(uuid())
+  nome       String
+  usuarioId  String
+  usuario    Usuario     @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  transacoes Transacao[]
+}
+
+model Transacao {
+  id          String     @id @default(uuid())
+  titulo      String
+  valor       Float
+  tipo        String
+  categoria   String
+  criadoEm    DateTime   @default(now())
+  usuarioId   String
+  usuario     Usuario    @relation(fields: [usuarioId], references: [id])
+  
+  // Opcionais para amarrar com Carteira/Categoria se estiver usando nas relações acima:
+  carteiraId  String?
+  carteira    Carteira?  @relation(fields: [carteiraId], references: [id])
+  
+  categoriaId String?
+  catRel      Categoria? @relation(fields: [categoriaId], references: [id])
+}
