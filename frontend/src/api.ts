@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'http://localhost:3333/api',
+  // Tenta usar a URL da nuvem. Se não existir, usa o localhost.
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:3333/api',
 });
 
 // Adiciona o Token JWT automaticamente nas requisições
@@ -22,7 +23,6 @@ api.interceptors.response.use(
       localStorage.removeItem('usuarioId');
       localStorage.removeItem('usuarioNome');
       
-      // Altere para a rota correta do seu login (ex: '/login' se '/' for outra página)
       window.location.href = '/login'; 
     }
     return Promise.reject(error);
