@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Variaveis de ambiente e Banco SQLite
+.env
+*.db
+*.db-journal

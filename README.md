@@ -25,7 +25,7 @@ Este projeto foi construído utilizando uma stack moderna compatível com os pad
 ### **Backend**
 * **Node.js** com **Express** (API REST robusta)
 * **Prisma ORM** (Mapeamento objeto-relacional seguro e migrações eficientes)
-* **PostgreSQL** hospedado na nuvem via **Neon** (Banco de dados relacional escalável)
+* **SQLite** (Banco de dados embutido, configurado para facilitar a execução no ambiente de desenvolvimento)
 * **JWT (JSON Web Tokens)** & **Bcrypt.js** (Autenticação segura e criptografia de senhas)
 * **Nodemailer** (Serviço automatizado de envio de e-mails para recuperação de senha)
 
