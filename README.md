@@ -50,15 +50,15 @@ Certifique-se de ter o **Node.js** e o **Git** instalados em sua máquina.
 ```bash
 git clone https://github.com/Guilherme-demetino/Finance.git
 
-
-### 2. Inicialize o banco de dados executando as migrações do Prisma:
-npx prisma migrate dev
-
-### 3. Configurar e Executar o Backend
+### 2. Configurar e Executar o Backend
 Abra o terminal, acesse a pasta do servidor e instale as dependências:
 ```bash
-cd Finance/backend
+cd backend
 npm install 
+### 3. Inicialize o banco de dados executando as migrações do Prisma:
+Renomei o arquio ".env.example" para ".env"
+npx prisma migrate dev
+### 4.Inicialize o servidor backend
 inicie o servidor backend 
 cd Finance/backend 
 npm run dev
@@ -70,7 +70,7 @@ cd frontend
 # ou 'cd ../frontend' caso ainda esteja dentro da pasta backend
 npm install
 inicie o servidor frontend 
-cd Finance/frontend 
+cd frontend 
 npm run dev
 
 
