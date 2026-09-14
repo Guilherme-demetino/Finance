@@ -13,8 +13,8 @@ const JWT_SECRET = 'sua_chave_secreta_super_segura';
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'seusistema.app@gmail.com',
-    pass: 'kdel peth qsju sysq'
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
   }
 });
 
