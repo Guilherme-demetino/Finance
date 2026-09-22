@@ -63,7 +63,7 @@ inicie o servidor backend
 cd Finance/backend 
 npm run dev
 
-### 4. Configurar e Iniciar o Frontend
+### 5. Configurar e Iniciar o Frontend
 Abra um **novo terminal** (mantenha o terminal do backend rodando), acesse a pasta do frontend e instale as dependências:
 ```bash
 cd frontend
